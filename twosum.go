@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func twoSum(nums []int, target int) []int {
 	// Create map to store the number and its index
 	// key: number, value: index
@@ -16,10 +14,4 @@ func twoSum(nums []int, target int) []int {
 		m[num] = i
 	}
 	return nil
-}
-
-func main() {
-	nums := []int{2, 11, 11, 7}
-	target := 9
-	fmt.Println(twoSum(nums, target))
 }
