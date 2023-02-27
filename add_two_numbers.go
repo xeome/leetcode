@@ -37,5 +37,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 	// Return the next node of the result node
 	return result.Next
-
 }
