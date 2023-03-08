@@ -16,39 +16,28 @@ func Test_addTwoNumbers(t *testing.T) {
 		want *ListNode
 	}{
 		{
-			name: "Test 1",
+			name: "Example 1",
 			args: args{
-				l1: &ListNode{
-					Val: 2,
-					Next: &ListNode{
-						Val: 4,
-						Next: &ListNode{
-							Val:  3,
-							Next: nil,
-						},
-					},
-				},
-				l2: &ListNode{
-					Val: 5,
-					Next: &ListNode{
-						Val: 6,
-						Next: &ListNode{
-							Val:  4,
-							Next: nil,
-						},
-					},
-				},
+				l1: createLinkedList([]int{2, 4, 3}),
+				l2: createLinkedList([]int{5, 6, 4}),
 			},
-			want: &ListNode{
-				Val: 7,
-				Next: &ListNode{
-					Val: 0,
-					Next: &ListNode{
-						Val:  8,
-						Next: nil,
-					},
-				},
+			want: createLinkedList([]int{7, 0, 8}),
+		},
+		{
+			name: "Example 2",
+			args: args{
+				l1: createLinkedList([]int{0}),
+				l2: createLinkedList([]int{0}),
 			},
+			want: createLinkedList([]int{0}),
+		},
+		{
+			name: "Example 3",
+			args: args{
+				l1: createLinkedList([]int{9, 9, 9, 9, 9, 9, 9}),
+				l2: createLinkedList([]int{9, 9, 9, 9}),
+			},
+			want: createLinkedList([]int{8, 9, 9, 9, 0, 0, 0, 1}),
 		},
 	}
 	for _, tt := range tests {

@@ -16,45 +16,28 @@ func Test_mergeTwoLists(t *testing.T) {
 		want *ListNode
 	}{
 		{
-			name: "test1",
+			name: "Example 1",
 			args: args{
-				list1: &ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 4,
-						},
-					},
-				},
-				list2: &ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 3,
-						Next: &ListNode{
-							Val: 4,
-						},
-					},
-				},
+				list1: createLinkedList([]int{1, 2, 4}),
+				list2: createLinkedList([]int{1, 3, 4}),
 			},
-			want: &ListNode{
-				Val: 1,
-				Next: &ListNode{
-					Val: 1,
-					Next: &ListNode{
-						Val: 2,
-						Next: &ListNode{
-							Val: 3,
-							Next: &ListNode{
-								Val: 4,
-								Next: &ListNode{
-									Val: 4,
-								},
-							},
-						},
-					},
-				},
+			want: createLinkedList([]int{1, 1, 2, 3, 4, 4}),
+		},
+		{
+			name: "Example 2",
+			args: args{
+				list1: createLinkedList([]int{}),
+				list2: createLinkedList([]int{}),
 			},
+			want: createLinkedList([]int{}),
+		},
+		{
+			name: "Example 3",
+			args: args{
+				list1: createLinkedList([]int{}),
+				list2: createLinkedList([]int{0}),
+			},
+			want: createLinkedList([]int{0}),
 		},
 	}
 	for _, tt := range tests {
