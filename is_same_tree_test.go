@@ -15,26 +15,26 @@ func Test_isSameTree(t *testing.T) {
 		{
 			name: "test1",
 			args: args{
-				p: &TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
-				q: &TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
+				p: createTree([]int{1, 2, 3}),
+				q: createTree([]int{1, 2, 3}),
 			},
 			want: true,
+		},
+		{
+			name: "test2",
+			args: args{
+				p: createTree([]int{1, 2}),
+				q: createTree([]int{1, -1, 2}),
+			},
+			want: false,
+		},
+		{
+			name: "test3",
+			args: args{
+				p: createTree([]int{1, 2, 1}),
+				q: createTree([]int{1, 1, 2}),
+			},
+			want: false,
 		},
 	}
 	for _, tt := range tests {

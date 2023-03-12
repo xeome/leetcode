@@ -12,30 +12,18 @@ func Test_isSymmetric(t *testing.T) {
 		want bool
 	}{
 		{
-			name: "test1",
-			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Left: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-						Right: &TreeNode{
-							Val: 4,
-						},
-					},
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 4,
-						},
-						Right: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
-			},
+			name: "Example 1",
+			args: args{root: createTree([]int{1, 2, 2, 3, 4, 4, 3})},
+			want: true,
+		},
+		{
+			name: "Example 2",
+			args: args{root: createTree([]int{1, 2, 2, -1, 3, -1, 3})},
+			want: false,
+		},
+		{
+			name: "Example 3",
+			args: args{root: createTree([]int{})},
 			want: true,
 		},
 	}

@@ -1,6 +1,9 @@
 package main
 
 func isSymmetric(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
 	return traverse(root.Left, root.Right)
 }
 

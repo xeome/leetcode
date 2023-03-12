@@ -15,31 +15,24 @@ func Test_inorderTraversal(t *testing.T) {
 		want []int
 	}{
 		{
-			name: "test1",
-			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-						Left: &TreeNode{
-							Val: 3,
-						},
-					},
-				},
-			},
+			name: "Example 1",
+			args: args{root: createTree([]int{1, -1, 2, 3})},
 			want: []int{1, 3, 2},
 		},
 		{
-			name: "test2",
-			args: args{
-				root: &TreeNode{
-					Val: 1,
-					Right: &TreeNode{
-						Val: 2,
-					},
-				},
-			},
-			want: []int{1, 2},
+			name: "Example 2",
+			args: args{root: createTree([]int{})},
+			want: []int{},
+		},
+		{
+			name: "Example 3",
+			args: args{root: createTree([]int{1})},
+			want: []int{1},
+		},
+		{
+			name: "Example 4",
+			args: args{root: createTree([]int{1, 2})},
+			want: []int{2, 1},
 		},
 	}
 	for _, tt := range tests {
